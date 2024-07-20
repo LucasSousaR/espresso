@@ -57,11 +57,11 @@ pt-BR:
         action: Confirmar minha conta
         greeting: Bem-vindo %{recipient}!
         instruction: 'Você pode confirmar sua conta através do link abaixo:'
-        subject: SmollChat - Confirmação de cadastro
+        subject: Instruções de confirmação
       email_changed:
         greeting: Olá %{recipient}!
         message: Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}.
-        subject: SmollChat - E-mail alterado
+        subject: E-mail alterado
       password_change:
         greeting: Olá %{recipient}!
         message: Estamos entrando em contato para notificá-lo de que sua senha foi alterada.
@@ -72,13 +72,13 @@ pt-BR:
         instruction: Alguém fez o pedido para redefinir sua senha, e você pode fazer isso clicando no link abaixo.
         instruction_2: Se você não fez este pedido, por favor ignore este e-mail.
         instruction_3: Sua senha não será alterada até que você acesse o link acima e crie uma nova.
-        subject:  SmollChat - Redefinição de senha
+        subject: Instruções de redefinição de senha
       unlock_instructions:
         action: Desbloquear minha conta
         greeting: Olá %{recipient}!
         instruction: 'Clique no link abaixo para desbloquear sua conta:'
         message: Sua conta foi bloqueada devido ao excessivo número de tentativas acesso inválidas.
-        subject: SmollChat -  Desbloqueio
+        subject: Instruções de desbloqueio
     omniauth_callbacks:
       failure: Não foi possível autorizar de uma conta de %{kind} porque "%{reason}".
       success: Autorizado com sucesso de uma conta de %{kind}.

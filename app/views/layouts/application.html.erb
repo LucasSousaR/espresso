@@ -15,35 +15,42 @@
   <body id="page-top">
 
     <div id="wrapper">
-      <%= render  "layouts/shared/sidebar" %>
-
+      <%if current_user.present?  %>
+          <%= render  "layouts/shared/sidebar" %>
+      <%end %>
       <div id="content-wrapper" class="d-flex flex-column">
 
         <div id="content">
-          <%= render "layouts/shared/topbar" %>
+          <%if current_user.present?  %>
+            <%= render "layouts/shared/topbar" %>
+          <%end %>
 
-          <div class="container-fluid">
-            <%= yield %>
-          </div>
+          <%= yield %>
+
         </div>
-
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
+        <%if current_user.present?  %>
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2019</span>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        <% end %>
+
 
       </div>
 
     </div>
-
+    <%if current_user.present?  %>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
 
     <%= render "layouts/shared/logout_modal" %>
+
+    <% end %>
+
   </body>
 </html>

@@ -1,0 +1,612 @@
+pt-BR:
+  helpers:
+    select:
+      prompt: Por favor selecione
+      include_blank: Todos
+    submit:
+      create: Criar
+      update: Atualizar
+      proposal_simulation:
+        simulate: Simular
+        back: Voltar
+        continue: Continuar
+        finish: Concluir
+        send: Enviar
+        search: Buscar
+        searching: Buscar
+      borrower:
+        search: Buscar
+#        update: Continuar
+      user:
+        sign_in: "Entrar"
+        butoom: "Autenticar"
+        settings:
+          update_profile: 'Atualizar perfil'
+          update_password: 'Atualizar senha'
+
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'obrigatório'
+      mark: '*'
+    labels:
+      q:
+        id_cont: 'Pesquisa por ID'
+        item_id: 'Pesquisa por ID'
+        name_or_email_cont: 'Pesquisa avançada'
+        role_id_eq: 'Função'
+        item_type: 'Tipo do item de pesquisa'
+        date_select_order_status: 'Status do usuário'
+        units_id_eq: 'Agências'
+        name_cont: 'Nome'
+        created_at_gteq: 'Data Inicial'
+        created_at_lteq: 'Data Final'
+        borrower_name_or_borrower_email_or_borrower_cpf_cont: 'Pesquisa avançada'
+        name_or_email_or_cpf_cont: 'Pesquisa avançada'
+        company_id_eq: 'Cooperativa'
+        borrower_type_current_eq: 'Tipo de tomador'
+        type_current_eq: 'Tipo do item de pesquisa'
+        product_id_eq: 'Produto'
+        status_matches_any: 'Status'
+        status: 'Status'
+        date_select_order: 'Tipo de ordenação'
+        date_select_order_init: 'Seleção do tipo da data'
+
+        #Billing
+        user_name_cont: 'Pesquisar por nome'
+        user_id_eq: 'Responsável'
+    placeholders:
+      borrower:
+        cpf_search: '000.000.000-00'
+        cnpj_search: '00.000.000/0000-00'
+      q:
+        name_cont: 'Pesquisa por nome'
+        name_or_email_cont: 'Nome ou email'
+        borrower_name_or_borrower_email_or_borrower_cpf_cont: 'Pesquisa por CPF'
+        name_or_email_or_cpf_cont: 'Pesquisa por CPF'
+      proposals_easycredito_easycredito_personal_loan:
+        borrower_name_of_mother: 'Maria Antônia da Silva'
+        borrower_hometown: 'Goiânia'
+        borrower_rg: '0000000'
+        borrower_agency: '0000'
+        borrower_address_street: 'Avenida Principal'
+        borrower_address_number: '243'
+        borrower_address_complement: 'Edifício Morada do Sol, Térreo'
+        borrower_address_district: 'Setor Jardim Luz'
+        borrower_address_city: 'Goiânia'
+        uc: '0000000000'
+        borrower_business_payday: 'Dia em que você recebe. Ex: 05'
+        borrower_street: 'Avenida Principal'
+        borrower_number: '243'
+        borrower_complement: 'Edifício Morada do Sol, Térreo'
+        borrower_district: 'Setor Jardim Luz'
+        borrower_city: 'Goiânia'
+        proposals_hcred_hcred_personal_loan:
+          borrower_name_of_mother: 'Maria Antônia da Silva'
+          borrower_hometown: 'Goiânia'
+          borrower_rg: '0000000'
+          borrower_agency: '0000'
+          borrower_address_street: 'Avenida Principal'
+          borrower_address_number: '243'
+          borrower_address_complement: 'Edifício Morada do Sol, Térreo'
+          borrower_address_district: 'Setor Jardim Luz'
+          borrower_address_city: 'Goiânia'
+          uc: '0000000000'
+          borrower_business_payday: 'Dia em que você recebe. Ex: 05'
+          borrower_street: 'Avenida Principal'
+          borrower_number: '243'
+          borrower_complement: 'Edifício Morada do Sol, Térreo'
+          borrower_district: 'Setor Jardim Luz'
+          borrower_city: 'Goiânia'
+      proposals_easycredito_mistercred_personal_loan:
+        borrower_name_of_mother: 'Maria Antônia da Silva'
+        borrower_hometown: 'Goiânia'
+
+        borrower_rg: '0000000'
+        borrower_agency: '0000'
+
+        borrower_address_street: 'Avenida Principal'
+        borrower_address_number: '243'
+        borrower_address_complement: 'Edifício Morada do Sol, Térreo'
+        borrower_address_district: 'Setor Jardim Luz'
+        borrower_address_city: 'Goiânia'
+
+        uc: '0000000000'
+
+        borrower_business_payday: 'Dia em que você recebe. Ex: 05'
+
+        borrower_street: 'Avenida Principal'
+        borrower_number: '243'
+        borrower_complement: 'Edifício Morada do Sol, Térreo'
+        borrower_district: 'Setor Jardim Luz'
+        borrower_city: 'Goiânia'
+
+
+      user:
+        name: Insira seu nome completo
+        email: Insira seu e-mail
+        recover_email: Insira seu e-mail
+        password: Insira sua senha
+        current_password: Insira sua senha atual
+        password_confirmation: Confirme a sua senha
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    prompts:
+      defaults:
+  controllers:
+    cause_types:
+      one: 'Tipos de Causas'
+      other: 'Tipos de Causas'
+
+  # Default translations
+  attributes:
+    value: 'Valor'
+    name: 'Nome'
+    code: 'Código'
+    cpf: 'CPF'
+    type_credmobi: 'Tipo de Credmobi'
+    type_user: 'Usuário para'
+    cnpj: 'CNPJ'
+    social_name: 'Razão social'
+    opening_date_cnpj: 'Data de abertura'
+    cpf_formatted: 'CPF'
+    cnpj_formatted: 'CNPJ'
+    email: 'Email'
+    birthday: 'Data de nascimento'
+    gender: 'Selecione o gênero'
+    phone_number: 'Número de telefone'
+    phone: 'Número de telefone'
+    cep: 'CEP'
+    description: 'Descrição'
+    tenant_name: 'Tenant'
+    role: 'Função'
+    easycredito_instabilit: 'Instabilidade'
+    company: Empresa
+    uf: 'Estado'
+    city: 'Cidade'
+    district: 'Bairro'
+    number: 'Número'
+    unit: Agência
+    income: 'Renda'
+    informed_income: 'Renda'
+    serasa_income: 'Renda serasa'
+    score_score: 'Score serasa'
+    units: Agências
+    vehicle_plate: 'Placa do veículo'
+    vehicle_chassi: 'Chassi do veículo'
+    vehicle_color: 'Cor do veículo'
+    vehicle_renavam: 'Renavam do veículo'
+    vehicle_renavam_uf: ' UF renavam do veículo'
+    vehicle_uf_license_plate: 'UF de emplacamento'
+    entrance_view: 'Valor da entrada'
+    value_view: 'Valor Liberado'
+    frequency: 'Periodicidade Pagamento'
+    rate_of_return: 'Operação'
+    number_of_installments: 'Número de parcelas'
+    created_at: 'Criado em'
+    borrower_nationality: 'Nacionalidade'
+    borrower_marital_status: 'Estado Civil'
+    borrower_occupation: 'Ocupação'
+    borrower_name_of_mother: 'Nome da mãe'
+    borrower_name_of_father: 'Nome do pai'
+    borrower_occupation_admission_date: 'Data de admissão'
+    borrower_occupation_time: 'Tempo de atividade'
+    borrower_occupation_secondary: 'Ocupação'
+    check_other_income: ''
+    borrower_profession_class: 'Classe de profissão'
+    borrower_social_name: 'Nome/Razão Social do empregador'
+    borrower_occupation_cnpj: 'CNPJ do empregador'
+    date_select_order: 'Tipo de ordenação'
+    borrower_profession: 'Profissão'
+    borrower_state: 'Estado'
+    borrower_city: 'Cidade'
+    borrower_cep: 'CEP'
+    borrower_cnh: 'CNH'
+    borrower_district: 'Bairro'
+    borrower_street: 'Logradouro'
+    borrower_number: 'Número'
+    borrower_rg_dispatcher: 'Emissor do documento'
+    borrower_rg_uf: 'UF do documento de identidade'
+    borrower_rg_dispatch_date: 'Data de expedição do documento'
+    borrower_rg: 'Numero do documento de identidade'
+    borrower_complement: 'Complemento'
+    borrower_education: 'Escolaridade'
+    borrower_business_company_phone: 'Telefone da Empresa'
+    borrower_home_type: 'Tipo de residência'
+    borrower_select_doc_identification: 'Documento de identidade'
+    borrower_state_license_plate: 'UF de emplacamento do veículo'
+    request_proof_of_income: 'Solicitar comprovação de renda'
+    borrower_business_type_proof_income: 'Vou comprovar a minha renda com'
+    licensePlate: 'Placa do carro (Opcional)'
+    loanObjectives: 'Qual a finalidade da sua solicitação?'
+    borrower_business_payday: 'Dia do pagamento'
+    vehicle_market_value: 'Valor de mercado do veiculo'
+    borrower_wife_income: 'Renda do cônjuge'
+    businessBenefitCategory: 'Categoria do benefício'
+    businessEmpregador: 'Empregador'
+    businessLotacao: 'Lotação'
+    businessOrgao: 'Órgão'
+    businessBenefitNumber: 'Número do benefício'
+    businessBenefitType: 'Tipo do benefício'
+    uc: 'Número da Instalação ( Da Conta de Luz )'
+    identification_document_borrower_marital: 'Documento de identificação do cônjuge (RG, CNH)'
+    guarantor_name_one: 'Nome do primeiro avalista'
+    guarantor_document_type_one: 'Documento de identidade'
+    guarantor_document_number_one: 'Numero do documento'
+    guarantor_document_cpf_one: 'CPF'
+    guarantor_marital_status_one: 'Estado Civil'
+    guarantor_rg_dispatcher_one: 'Emissor do documento'
+    guarantor_cep_one: 'CEP'
+    guarantor_state_one: 'Estado'
+    guarantor_city_one: 'Cidade'
+    guarantor_district_one: 'Bairro'
+    guarantor_street_one: 'Logradouro'
+    guarantor_number_one: 'Número'
+    guarantor_complement_one: 'Complemento'
+    guarantor_wife_name_one: 'Nome do cônjuge'
+    guarantor_wife_cpf_one: 'CPF do cônjuge'
+    guarantor_uf_one: 'UF'
+    guarantor_wife_document_type_one: 'Documento de identidade do cônjuge'
+    guarantor_wife_document_number_one: 'Numero do documento do cônjuge'
+    guarantor_wife_rg_dispatcher_one: 'Emissor do documento do cônjuge'
+    guarantor_affiliation_one: 'Nome da filiação'
+    guarantor_affiliation: 'Possui filhos?'
+    guarantor_affiliation_one_one: 'Nome da filiação'
+    guarantor_affiliation_two_two: 'Nome da filiação'
+    guarantor_affiliation_two_one: 'Nome da filiação'
+    guarantor_affiliation_one_two: 'Nome da filiação'
+    guarantor_affiliation_two:  'Nome da filiação'
+    guarantor_wife: 'Regime de Comunhão'
+    guarantor_wife_two: 'Regime de Comunhão'
+    guarantor_document_date_one: 'Data de emissão:'
+    guarantor_wife_document_date_one: 'Data de emissão:'
+    guarantor_wife_document_date_two: 'Data de emissão:'
+    name_product: 'Nome do produto'
+    request_number: 'Numero do pedido'
+
+    fiduciante_document_type: 'Documento de identidade '
+    fiduciante_document_number: 'Numero do documento'
+    fiduciante_rg_dispatcher: 'Emissor do documento'
+    fiduciante_uf: 'UF'
+    fiduciante_document_date: 'Data de emissão:'
+    fiduciante_wife: 'Regime de Comunhão'
+
+    guarantor_name_two: 'Nome do segundo avalista'
+    guarantor_document_type_two: 'Documento de identidade'
+    guarantor_document_number_two: 'Numero do documento'
+    guarantor_document_cpf_two: 'CPF'
+    guarantor_uf_two: 'UF'
+    guarantor_marital_status_two: 'Estado Civil'
+    guarantor_rg_dispatcher_two: 'Emissor do documento'
+    guarantor_profession: 'Profissão do avalista'
+    guarantor_cep_two: 'CEP'
+    guarantor_state_two: 'Estado'
+    guarantor_city_two: 'Cidade'
+    guarantor_district_two: 'Bairro'
+    guarantor_street_two: 'Logradouro'
+    guarantor_number_two: 'Número'
+    guarantor_complement_two: 'Complemento'
+    guarantor_wife_name_two: 'Nome do cônjuge'
+    guarantor_wife_cpf_two: 'CPF do cônjuge'
+    guarantor_wife_document_type_two: 'Documento de identidade do cônjuge'
+    guarantor_wife_document_number_two: 'Numero do documento do cônjuge'
+    guarantor_wife_rg_dispatcher_two: 'Emissor do documento do cônjuge'
+
+    fiduciante_name: 'Nome garantidor'
+    fiduciante_document_cpf: 'CPF garantidor'
+    fiduciante_cep: 'CEP'
+    fiduciante_state: 'Estado'
+    fiduciante_city: 'Cidade'
+    fiduciante_district:  'Bairro'
+    fiduciante_street:  'Logradouro'
+    fiduciante_number: 'Número'
+    fiduciante_complement: 'Complemento'
+
+    depositary_name: 'Nome depositorio'
+    depositary_document_cpf:  'CPF depositorio'
+
+    issuer_name: 'Nome do emitente'
+    issuer_document_cpf:  'CPF emitente'
+
+
+
+
+
+
+    borrower_business_income: 'Renda mensal'
+    borrower_address_cep: 'CEP da empresa'
+    borrower_address_state: 'Estado'
+    borrower_address_city: 'Cidade'
+    borrower_address_district: 'Bairro'
+    borrower_address_street: 'Logradouro'
+    borrower_address_number: 'Número'
+    borrower_address_complement: 'Complemento'
+
+    guarantor_age : 'Idade'
+    guarantor_wife_age : 'Idade'
+    fiduciante_profession: 'Profissão'
+    fiduciante_marital_status:  'Estado civil'
+
+    borrower_bank: 'Banco'
+    borrower_agency: 'Agência sem dígito'
+    borrower_bank_account: 'Conta bancária'
+    borrower_account_type: 'Tipo de Conta'
+
+    other_value: 'Outro Valor'
+
+    issociated: 'É associado?'
+    document_other: 'Outros documentos'
+    personal_document: 'Documento pessoal com foto e assinatura'
+    proof_of_income: 'Comprovante de renda (Data de emissão de até 60 dias) opcional'
+    borrower_document_type: 'Tipo do documento'
+    borrower_mother_name: 'Nome completo da mãe'
+    borrower_father_name: 'Nome completo do pai'
+    borrower_hometown: 'Naturalidade'
+    borrower_hometown_state: 'UF de naturalidade'
+    borrower_resides_from: 'Reside desde'
+    borrower_home_phone: 'Telefone fixo'
+    equity_value: 'Valor de patrimônio'
+    borrower_company_home_phone: 'Telefone fixo'
+    borrower_employed_since: 'Data de admissão'
+    borrower_company_name: 'Nome da empresa do cliente ou da empresa em que ele trabalha'
+    borrower_company_identification_document: 'CNPJ da empresa'
+    borrower_company_street: 'Logradouro da empresa'
+    borrower_company_number: 'Número da empresa'
+    borrower_company_complement: 'Complemento da empresa'
+    borrower_company_cep: 'CEP da empresa'
+    borrower_company_district: 'Bairro da empresa'
+    borrower_company_city: 'Cidade da empresa'
+    borrower_company_state: 'Estado da empresa'
+    borrower_reference_name_1: 'Nome da primeira referência'
+    borrower_reference_phone_number_1: 'Telefone da primeira referência'
+    borrower_reference_name_2: 'Nome da segunda referência'
+    borrower_reference_phone_number_2: 'Telefone da segunda referência'
+    borrower_politically_exposed: 'Pessoa politicamente exposta'
+    borrower_abdication_citizenship_eua_c_doc: 'Abdiquei da nacionalidade ou cidadania dos E.U.A., conforme Certificado de Perda de Nacionalidade (Certificate of Loss Of Nationality), emitido pelo Bureau of Consular Affairs do Estado dos E.U.A., anexo a esta declaração. Declaração de não residente fiscal nos E.U.A (Preencher somente se renunciou à cidadania americana)'
+    borrower_abdication_rights_eua_c_doc: 'Abdiquei da nacionalidade ou cidadania dos E.U.A., conforme Certificado de Perda de Nacionalidade (Certificate of Loss Of Nationality), emitido pelo Bureau of Consular Affairs do Estado dos E.U.A., anexo a esta declaração. correspondente ou não adquiri tal cidadania ao nascer.'
+    borrower_abdication_citizenship_eua_s_doc: 'Apesar de ter nascido nos E.U.A., conforme declaração anexa, renunciei à cidadania dos E.U.A., (embora ainda não possua o Certificado Declaro, sob as penas da lei, que não sou residente fiscal nos E.U.A., pois me enquadro em uma ou mais das situações abaixo descritas, conforme assinalada(s) por mim.'
+    borrower_hearing_deficiency: 'Deficiência auditiva'
+    borrower_physical_disability: 'Deficiência física'
+    borrower_visual_impairment: 'Deficiência visual'
+    borrower_rg_document_type: 'Documento de identidade'
+    borrower_person1_name_reference: 'Nome da primeira referência'
+    borrower_person1_cell_phone_reference: 'Telefone da primeira referência'
+    borrower_person1_relationship_reference: 'Relação com a primeira referência'
+    borrower_person2_name_reference: 'Nome da segunda referência'
+    borrower_person2_cell_phone_reference: 'Telefone da segunda referência'
+    borrower_person2_relationship_reference: 'Relação com a segunda referência'
+
+
+    borrower_lender_cell_phone: 'Telefone'
+    borrower_lender_equity_value: 'Valor de patrimônio'
+    borrower_lender_name: 'Nome'
+    borrower_lender_cpf: 'CPF'
+
+    borrower_person1_name_witness: 'Nome da primeira testemunha'
+    borrower_person1_cell_phone_witness: 'Telefone da primeira testemunha'
+    borrower_person1_relationship_witness: 'Relação com a primeira testemunha'
+    borrower_person1_cpf_witness: 'CPF da primeira testemunha'
+    borrower_person2_name_witness: 'Nome da segunda testemunha'
+    borrower_person2_cpf_witness: 'CPF da segunda testemunha'
+    borrower_person2_cell_phone_witness: 'Telefone da segunda testemunha'
+    borrower_person2_relationship_witness: 'Relação com a segunda testemunha'
+
+    borrower_wedding_regime: 'Regime de casamento'
+    borrower_wife_name: 'Nome do cônjuge'
+    borrower_wife_cpf: 'CPF do cônjuge'
+    borrower_live_from_date: 'Residir desde'
+#    personal_document: 'Documento pessoal (RG, CPF, Carteira de trabalho ou carteira profissional)'
+#    proof_of_income: 'Comprovante de renda'
+    proof_of_address: 'Comprovante de residência'
+    scr_restrictions: 'Reprovado por restrições no SCR'
+    serasa_scr_restrictions: 'Reprovado por somatório do SERASA & SCR superior ao valor permitido'
+
+    benefit_number: 'Número do benefício'
+    amount_of_benefit: 'Valor do benefício'
+    free_margin: 'Margem livre'
+
+
+    contract_one: 'Contrato folha 1'
+    term: 'Termo'
+    authorization_bacen: 'Autorização Bacen'
+    proof_of_marital_status: 'Comprovante de Estado Civil'
+    dps: 'DPS'
+    contract_two: 'Contrato folha 2'
+    contract_three: 'Contrato folha 3'
+    credit_note: 'Cédula de Crédito'
+    admission_proposal: 'Carta Proposta'
+
+    # Documents to easycredito personal loan
+    self: 'Selfie'
+    identity_front: 'Frente do documento'
+    identity_back: 'Verso do documento'
+    address_proof: 'Comprovante de endereço'
+    income_proof: 'Comprovante de renda'
+
+    declaration_of_interest: 'Declaração de interesse em Financiamento'
+    vehicle_inspection: 'Vistoria do veiculo'
+    front_of_vehicle: 'Frente do veículo'
+    vehicle_side: 'Lateral do veículo'
+    rear_of_vehicle: 'Traseira do veículo'
+
+    # TO ADD DOCUMENTS
+    contract_ballot_credit: 'Cédula de Crédito'
+    efective_cost: 'Custo Efetivo Total assinado'
+    proof_of_income_pioneira: 'Comprovante de renda (data de emissão de até 60 dias)'
+    document_lender_insurance: 'Termo de Adesão ao Seguro Prestamista assinado'
+    identification_document: 'Documento de identificação'
+
+    spouse_identification_document: 'Documento de identificação do cônjuge'
+    wedding_certificate: 'Certidão de casamento'
+    vehicle_document: 'Documento do veículo'
+
+    dut_nf: 'DUT/NF'
+    dut_nf_verse: 'DUT/NF verso'
+    third_attorney_spio: 'Procuração (Terceiros)'
+    photo_rear_of_the_vehicle: 'Foto da traseira do Veículo'
+    proof_of_residence_spio: 'Comprovante de endereço (data de vencimento até 60 dias da data de emissão do documento)'
+    front_identity_document_spio: 'Frente de um documento de identidicação'
+    proposal_open_account_one: 'Proposta de abertura de conta 01'
+    proposal_open_account_two: 'Proposta de abertura de conta 02'
+    proposal_open_account_three: 'Proposta de abertura de conta 03'
+    proposal_open_account_four: 'Proposta de abertura de conta 04'
+    contract_ballot_credit_one: 'Cédula de Crédito 01'
+    contract_ballot_credit_two: 'Cédula de Crédito 02'
+    contract_ballot_credit_three: 'Cédula de Crédito 03'
+    contract_ballot_credit_four: 'Cédula de Crédito 04'
+    registration_form: 'Ficha de matrícula'
+    another_document_one: 'Outros documentos 01'
+    another_document_two: ' Outros documentos 02'
+    unit_id: 'Unidade'
+    start_range: 'Cep inicial'
+    end_range: 'Cep final'
+
+
+    operational_value: 'Valor da Operação'
+    requested_value: 'Valor da Operação'
+
+    guarantor_name: 'Nome'
+    guarantor_cpf: 'CPF'
+    guarantor_nationality: 'Nacionalidade'
+    guarantor_marital_status: 'Estado Civil'
+    guarantor_name_of_mother: 'Nome completo mãe'
+    guarantor_name_of_father: 'Nome completo do pai'
+    guarantor_occupation: 'Ocupação'
+    guarantor_document_date_two:  'Data de emissão:'
+
+    guarantor_wife_uf_one: 'UF'
+    guarantor_wife_uf_two: 'UF'
+
+    borrower_wife_rg_document_type: 'Documento de identidade'
+    borrower_wife_rg: 'Numero do documento de identificação'
+    borrower_wife_rg_dispatcher: 'Emissor do documento'
+    borrower_wife_uf: 'UF do documento de identificação'
+    borrower_wife_rg_dispatch_date: 'Data de expedição do documento'
+
+    guarantor_profession_two:  'Profissão'
+    guarantor_profession_one:  'Profissão'
+    guarantor_state: 'Estado'
+    guarantor_city: 'Cidade'
+    guarantor_cep: 'CEP'
+    guarantor_district: 'Bairro'
+    guarantor_street: 'Rua'
+    guarantor_number: 'Número'
+    guarantor_complement: 'Complemento'
+    guarantor_rg_dispatcher: 'Emissor do documento'
+    guarantor_rg_uf: 'UF do documento de identificação'
+    guarantor_rg_dispatcher_date: 'Data de expedição do documento'
+    guarantor_rg: 'Numero do documento de identificação'
+
+    # dados de avalista
+
+
+  activerecord:
+    attributes:
+#      unit:
+#      organization:
+
+      product:
+        proposal_type: 'Classe da proposta'
+        expiration_days: 'Expiração da proposta (dias)'
+        disposal_fee: 'Tarifa de alienação'
+        generate_cnab: 'Gerar Boleto'
+        generate_status: 'Enviar email no status'
+        users: 'Emails destinatários'
+      proposal:
+        vehicle_brand: Marca
+        vehicle_model: Modelo
+        vehicle_model_year: Ano do modelo
+        base_value: 'Valor do veículo'
+        source_base_value: 'Origem da consulta'
+        source_base_associated: 'Tipo do Cliente'
+        source_base_financing: 'Tipo de Financiamento'
+        form_of_payment: 'Forma de pagamento'
+        first_payment: ' Dia do primeiro Pagamento'
+        source_base_value_radios:
+          fipe: Consultar pela FIPE
+          suiv: Consultar por placa
+          sinesp:  Consultar por placa
+        form_of_payment_radios:
+          billet: Boleto
+          direct_debit: Débito em conta corrente
+          current_account_debit_plus_card: Débito em conta corrente + Cartão
+        source_base_associated_radios:
+          associated: Asssociado
+          not_associated: Não Asssociado
+        source_base_financing_radios:
+          small_producers_credit: Crédito Pequenos Produtores
+          rural_women_credit: Crédito Mulheres no Campo
+          agro_credit: Crédito Agro
+
+
+
+
+
+        informacoes_adicionais: 'Informações Adicionais'
+        informacoes_adicionais_radios:
+          hasVehicle: 'Tem veiculo?'
+          hasOwnHouse: 'Tem casa própria?'
+          hasRestriction: 'Tem restrição no nome?'
+          hasCreditCard: 'Tem cartão de crédito?'
+
+        source_base_value_radios_service:
+          public_server: Servidor Público
+          temporary_contract: Contrato Temporário
+          trust_position: Cargo de Confiança
+          gratified_function: Função Gratificada
+        source_base_value_radios_days:
+          day_one: 01
+          day_seven: 07
+          day_thirteen: 13
+          day_twenty_four: 24
+      user:
+        return_rate: 'Taxa de retorno'
+        coop_number: 'Número da cooperativa'
+        fancy_name: 'Nome fantasia'
+        company_name: 'Razão Social'
+        cnpj: 'CNPJ'
+        bank: 'Banco'
+        agency: 'Agência'
+        bank_account: 'Conta bancária'
+        companies: 'Empresas'
+        reseller: 'ATD'
+        manager: 'Gestor'
+        image: 'Foto do perfil'
+  # TODO: ACTIVE MODEL??
+  activemodel:
+    attributes:
+      product_bureau:
+        login: 'Login'
+        password: 'Senha'
+        priority: 'Prioridade'
+        weight: 'Peso'
+        klass: 'Classe'
+        validity: 'Validade'
+  # TODO: REMOVE THIS PLS
+  admin:
+    billing_statuses:
+      initial: 'Faturar'
+      waiting_document: 'Aguardando NF'
+      pendency: 'Pendência'
+      waiting_confirmation: 'Aguardando Confirmação'
+      paid: 'Pago'
+    statuses:
+      simulation: 'Enquadramento'
+      waiting_confirmation: 'Aguardando Confirmação'
+      reproved: 'Reprovado'
+      approved: 'Aprovado'
+      pre-approved: 'Pré-aprovado'
+      expired: 'Expirado'
+      released: 'Liberado'
+      resend_documents: 'Reenviar documentos'
+      send_documents: 'Enviar documentos'
+      fill_data: 'Preencher dados'
+      under_analysis: 'Em análise'
+      pendency: 'Pendência'
+      company_analysing: 'Empresa Analisando'
+      awaiting_contract: 'Aguardando contrato'
+      waiting_document: 'Aguardando documento'
+      hired: 'Contratado'
+      waiting_confirmation: 'Aguardando Confirmação'
