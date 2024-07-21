@@ -13,4 +13,27 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
+//= require toastr/toastr.js
+//= require jquery
+//= require jquery3
+//= require jquery_ujs
+//--- Input Mask
+//= require inputmask/dist/jquery.inputmask.bundle
 //= require_tree .
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "progressBar": true,
+    "preventDuplicates": false,
+    "positionClass": "toast-top-right",
+    "onclick": null,
+    "showDuration": "0",
+    "hideDuration": "0",
+    "timeOut": "0",
+    "extendedTimeOut": "0",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};

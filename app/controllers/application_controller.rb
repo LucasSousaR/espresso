@@ -18,6 +18,25 @@ class ApplicationController < ActionController::Base
       cookies.signed[:user_id] = current_user.id if cookies.signed[:user_id] != current_user.id
     end
 
+    if  request.env['REQUEST_PATH'].include? '/companies'
+      if !can?(:manage, Company)
+        redirect_back fallback_location: root_path
+      end
+    elsif (request.env['REQUEST_PATH'].include? "/users/") && (request.env['REQUEST_PATH'] != "/users/#{@user_role.id}")
+      if  !can?(:manage, User)
+        redirect_back fallback_location: root_path
+      end
+    elsif  request.env['REQUEST_PATH'].include? "/roles"
+      if  !can?(:manage, Role)
+        redirect_back fallback_location: root_path
+      end
+    elsif  request.env['REQUEST_PATH'].include? "/cards"
+      if  !can?(:manage, Card)
+        redirect_back fallback_location: root_path
+      end
+    end
+
+
   end
 
   def action_name_label

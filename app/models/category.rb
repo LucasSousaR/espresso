@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :statementies
+  has_many :statements
   belongs_to :company
 end

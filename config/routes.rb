@@ -10,5 +10,19 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+
+  resources :roles
+  resources :companies
+  resources :cards
+  resources :categories
+  resources :statements
+
+
+  resources :users do
+    patch 'block', on: :member
+    patch 'unblock', on: :member
+    post 'user_block', on: :collection
+    post 'user_unblock', on: :collection
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

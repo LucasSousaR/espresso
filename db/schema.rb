@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_19_184349) do
+ActiveRecord::Schema.define(version: 2024_07_21_001652) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2024_07_19_184349) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "statementies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "statements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.datetime "performed_at", null: false
     t.integer "cost"
     t.string "merchant"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2024_07_19_184349) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.integer "transaction_id"
-    t.index ["category_id"], name: "index_statementies_on_category_id"
+    t.index ["category_id"], name: "index_statements_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -123,8 +123,6 @@ ActiveRecord::Schema.define(version: 2024_07_19_184349) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "role_id"
-    t.bigint "company_id"
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -132,15 +130,30 @@ ActiveRecord::Schema.define(version: 2024_07_19_184349) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "versions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.json "object"
+    t.json "object_changes"
+    t.datetime "created_at"
+    t.index ["created_at"], name: "index_versions_on_created_at"
+    t.index ["event"], name: "index_versions_on_event"
+    t.index ["item_id"], name: "index_versions_on_item_id"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+    t.index ["item_type"], name: "index_versions_on_item_type"
+    t.index ["whodunnit"], name: "index_versions_on_whodunnit"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "attachments", "statementies", column: "statementies_id"
+  add_foreign_key "attachments", "statements", column: "statementies_id"
   add_foreign_key "cards", "users"
   add_foreign_key "categories", "companies"
   add_foreign_key "company_cards", "cards"
   add_foreign_key "company_cards", "companies"
   add_foreign_key "company_users", "companies"
   add_foreign_key "company_users", "users"
-  add_foreign_key "statementies", "categories"
-  add_foreign_key "users", "companies"
+  add_foreign_key "statements", "categories"
   add_foreign_key "users", "roles"
 end

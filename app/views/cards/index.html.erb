@@ -1,0 +1,18 @@
+<%= breadcrumb true %>
+
+<%= index_search_form_for @q do |f| %>
+  <%= f.input :id_cont, required: false, as: :string %>
+<% end %>
+<br>
+<%= index_table_for(@items) do |t|
+    t.column :id
+    t.column :last4, 'cod' do |i|
+      i.last4
+    end
+    t.column :user_id, 'Usuário' do |i|
+      User.find(i.user_id).name
+
+    end
+
+  end
+%>

@@ -2,14 +2,13 @@
 
     <%= f.input :name %>
     <%= f.input :email %>
-    <%= f.input :return_rate %>
-    <%= f.input :coop_number %>
-    <%= f.input :fancy_name %>
-    <%= f.input :company_name %>
-    <%= f.input :cnpj %>
-    <%= f.input :bank %>
-    <%= f.input :agency %>
-    <%= f.input :bank_account %>
+
+
+    <%#= f.input :fancy_name %>
+    <%#= f.input :company_name %>
+    <%#= f.input :cnpj %>
+
+
     <%  if action_name != 'show' %>
       <%= f.input :password %>
       <%= f.input :password_confirmation %>
@@ -29,67 +28,6 @@
 <%= content_for(:vendor_js_area) do %>
   <script>
     $(function () {
-      var  type = <%=@type_credmobi.to_i %>;
-
-      $('.user_dealer').css('display', 'none');
-      $('.user_seller').css('display', 'none');
-      $('.user_reseller').css('display', 'none');
-      $('.user_manager').css('display', 'none');
-      console.log(type);
-      if( type > 1 ){
-
-
-          $('#user_role_id').on('change', function(e) {
-
-              if ( ($('#user_role_id :selected').text() != "Gestor") && ($('#user_role_id :selected').text() != "BackOffice")  && ($('#user_role_id :selected').text() != "Suporte") && ($('#user_role_id :selected').text() != "Gestor de Vendas") && ($('#user_role_id :selected').text() != "Sub Gestor") ){
-                  $('.user_dealer').css('display', 'none');
-                  $('.user_seller').css('display', 'none');
-                  $('.user_reseller').css('display', 'none');
-                  $('.user_manager').css('display', 'none');
-              }
-
-              if(($('#user_role_id :selected').text() == "Gestor") || ($('#user_role_id :selected').text() == "Sub Gestor")){
-                  $('.user_dealer').css('display', 'block');
-                  $('.user_seller').css('display', 'block');
-
-              }
-              if($('#user_role_id :selected').text() == "BackOffice"){
-
-                  $('.user_dealer').css('display', 'block');
-                  $('.user_seller').css('display', 'block');
-                  $('.user_reseller').css('display', 'block');
-              }
-              if($('#user_role_id :selected').text() == "Suporte"){
-
-                  $('.user_dealer').css('display', 'block');
-                  $('.user_seller').css('display', 'block');
-                  $('.user_reseller').css('display', 'block');
-                  $('.user_manager').css('display', 'block');
-              }
-              if($('#user_role_id :selected').text() == "Gestor de Vendas"){
-                  $('.user_reseller').css('display', 'block');
-                  $('.user_dealer').css('display', 'none');
-                  $('.user_seller').css('display', 'none');
-              }
-
-          }).change();
-
-        }else{
-          console.log('aqui')
-
-          $('#user_role_id').on('change', function(e) {
-
-
-              if($('#user_role_id :selected').text() == "Operador Revendas"){
-                  $('.user_dealer').css('display', 'block');
-                  $('.user_seller').css('display', 'none');
-                  $('.user_reseller').css('display', 'block');
-              }
-
-
-
-          }).change();
-      }
 
     });
   </script>

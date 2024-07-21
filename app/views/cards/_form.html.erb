@@ -1,0 +1,7 @@
+<%= partial_simple_form_for(@item)do |f| %>
+  <%= f.input :last4, required: true %>
+
+  <%= f.association :user, collection: User.accessible_by(current_ability).all, prompt: true %>
+
+<% end %>
+

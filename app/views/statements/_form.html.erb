@@ -1,0 +1,19 @@
+<%= partial_simple_form_for(@item)do |f| %>
+
+  <%= f.input :transaction_id, required: true %>
+  <%= f.input :cost, required: true %>
+  <%= f.input :merchant, required: true %>
+  <%= f.input :performed_at,  input_html: { class: 'mask-date' },required: true %>
+
+  <%= f.association :category, collection: Category.accessible_by(current_ability).all, prompt: true %>
+
+<% end %>
+
+<script>
+    $(function () {
+        // CNPJ
+        $('.mask-date').inputmask({
+            alias: 'datetime', inputFormat: "dd/mm/yyyy"
+        });
+    })
+</script>

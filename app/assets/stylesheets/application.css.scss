@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require toastr/toastr.scss
  *= require_tree .
  *= require_self
  */
@@ -40,12 +41,33 @@ $boxed-max-width:                         1140px;
 $z-index-main-section:                    111;
 $headings-line-height:                    1.1;
 $text-muted:                              #909FA7;
+
+.toast-error {
+  color: #ffffff !important;
+  background-color: #bd362f !important;
+}
+.toast-warning {
+  color: #ffffff !important;
+  background-color: #f89406!important;
+}
+.toast-success {
+  color: #ffffff !important;
+  background-color: #51a351 !important;
+}
 .bg-gradient-primary {
   background-color: #3b0079;
   background-image: linear-gradient(180deg, #3b0079 10%, #190232 100%);
   background-size: cover;
 }
-
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #85879600;
+  border-radius: 0.35rem;
+}
 .wrapper {
   position: relative;
   width: 100%;

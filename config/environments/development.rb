@@ -24,7 +24,7 @@ Rails.application.configure do
   else
     config.action_controller.perform_caching = false
 
-    config.cache_store = :null_store
+    config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
@@ -54,8 +54,20 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  config.logger = ActiveSupport::Logger.new(nil)
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.generators do |g|
+    g.test_framework :rspec,
+                     controller_specs: false,
+                     view_specs: false,
+                     routing_specs: false
+    g.assets false
+    g.helper false
+    g.stylesheets false
+    g.jbuilder false
+    # g.orm :active_record
+  end
 end

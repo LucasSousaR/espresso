@@ -18,9 +18,9 @@ module ApplicationHelper
     action = t("views.#{controller_name}.action.#{action_name_label}", default: t("action.#{action_name_label}"))
     # title "#{title} | #{action}"
 
-    content_tag :div, class: 'content-heading' do
+    content_tag :div, class: 'd-flex justify-content-space-betwee' do
       left = content_tag :div do
-        div = content_tag(:ol, class: 'breadcrumb breadcrumb px-0 pb-0') do
+        div = content_tag(:ol, class: 'breadcrumb breadcrumb px-2 pb-2') do
           content = content_tag :li, class: 'breadcrumb-item' do
             link_to 'Página Inicial', root_path
           end
@@ -487,4 +487,21 @@ module ApplicationHelper
       end)
     end.html_safe
   end
+
+  def format_cnpj(cnpj)
+    cnpj = cnpj.to_s
+
+    # Verificar se o CNPJ já está formatado
+    if cnpj.match?(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/)
+      return cnpj
+    end
+
+    # Formatar o CNPJ se tiver 14 dígitos
+    if cnpj.length == 14 && cnpj.match?(/^\d+$/)
+      "#{cnpj[0..1]}.#{cnpj[2..4]}.#{cnpj[5..7]}/#{cnpj[8..11]}-#{cnpj[12..13]}"
+    else
+      cnpj
+    end
+  end
+
 end

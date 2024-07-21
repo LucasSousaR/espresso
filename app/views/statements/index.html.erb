@@ -1,0 +1,24 @@
+<%= breadcrumb true %>
+
+<%= index_search_form_for @q do |f| %>
+  <%= f.input :id_cont, required: false, as: :string %>
+<% end %>
+<br>
+<%= index_table_for(@items) do |t|
+    t.column :id
+    t.column :transaction_id, 'TransactionId' do |i|
+      i.transaction_id
+    end
+    t.column :cost, 'Cost' do |i|
+      i.cost
+    end
+    t.column :merchant, 'Merchant' do |i|
+      i.merchant
+    end
+    t.column :performed_at, 'performed_at' do |i|
+      l(i.performed_at, format: :normal)
+    end
+
+
+  end
+%>

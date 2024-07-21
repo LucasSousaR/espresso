@@ -42,108 +42,6 @@ pt-BR:
           fuel: 'Combustível'
           origination: 'Procedência'
           number_of_places: 'Quantidade de lugares'
-    proposals:
-      details:
-        status: 'Status'
-        disapproval_reason: 'Motivo da reprovação'
-        waiting_reason: 'Motivo da reanálise'
-        proposal_number: 'Proposta'
-        name: 'Nome do cliente'
-        company: 'Empresa'
-        product: 'Produto'
-        unit: 'Unidade'
-        created_at: 'Criado em'
-      values:
-        value: 'Valor solicitado'
-        return_rate: 'Taxa de retorno'
-        financed_amount: 'Valor financiado'
-        entry_value: 'Valor da entrada'
-        number_of_installments: 'Número de parcelas'
-        number_date_chosen: 'Dia do vencimento da 1ª parcela'
-        value_of_installments: 'Valor da parcela'
-        monthly_interest: 'Taxa mensal'
-        plot_month: 'Mês da parcela'
-        monthly_rate_corrected: 'Taxa mensal corrigida'
-        iof: 'IOF'
-        tac: 'TAC'
-        lender_percentage: 'Taxa Prestamista'
-        lender_value: 'Valor Prestamista'
-        first_payment: ' Dia do primeiro Pagamento'
-        release_date: 'Data de liberação'
-        income_type: 'Renda usada'
-        incomes_type:
-          membership_base_income: 'Renda da base'
-          serasa_income: 'Renda do serasa'
-          informed_income: 'Renda informada'
-      vehicle:
-        vehicle_brand: 'Marca'
-        vehicle_model: 'Modelo'
-        vehicle_model_year: 'Ano do modelo'
-        vehicle_manufacture_year: 'Ano de fabricação'
-        vehicle_plate: 'Placa'
-        vehicle_chassi: 'Chassi'
-        vehicle_renavam: 'Renavam'
-        vehicle_renavam_uf: 'UF renavam '
-        Vehicle_color: 'Cor do veículos'
-      disapproval_reasons:
-        requested_amount_exceeded: 'Valor solicitado maior que R$ 100.000,00'
-        scr: 'SCR não encontrado'
-        scpc: 'SCPC não encontrado'
-        serasa: 'Serasa não encontrado'
-        risk_range: 'Faixa de risco não atende as exigências'
-        age: 'Idade'
-        rating: 'Rating não atende as exigências'
-        social_capital: 'Capital social não atende as exigências'
-        cadastral_renewal: 'Renovação cadastral não atende as exigências'
-        federal_revenue_situation: 'Situação na Receita Federal não atende as exigências'
-        restriction: 'Restrição presente'
-        vehicle_year: 'Ano do veículo não atende as exigências'
-        score: 'Score não atende as exigências'
-        integration_failed: 'Falha na integração (dados faltando)'
-        income_not_found: 'Renda não presente'
-        divergent_company: 'Cooperativa divergente'
-        below_minimum_income: 'Abaixo da renda mínima'
-        delay_20_days: 'Associado possui histórico de atraso maior que 20 dias'
-        without_free_income: 'Renda livre não disponível'
-        leilao: 'Veiculo possui leilão'
-        veiculo_retrictions : 'Veiculo possui restrição'
-        sinistro: 'Veiculo possui sinistro'
-        crlv: 'Crlv'
-        without_max_installments: 'Parcela máxima não disponível'
-        easycredito_instabilit: 'Instabilidade'
-        cpf_suspended: 'Cpf Suspenso'
-        diverging_data: 'Informação divergente '
-        blocked: 'Dados já constam em nossa base'
-
-        # Sicredi Uniestados
-        not_associated: 'Reprovado por não ser associado.'
-        blacklist: 'CPF presente na Blacklist.'
-        risk_bands: 'Reprovado por não possuir Faixas de risco.'
-        risk: 'Reprovado por não possuir Faixas de risco compativel.'
-        cooperator: 'Reprovado por não ser Cooperado.'
-        minimum_age: 'Reprovado por Idade.'
-        renegotiation: 'Reprovado por ter renegociação ativa.'
-        bad_payer : 'Reprovado por ser mau pagador.'
-        ineligible: 'Reprovado por ser inelegível.'
-        vehicle_year_erro: 'Não é possível financiar veículos anteriores a 2004!'
-        people_data_err: 'Faixa de risco não encontrada'
-        proposal_released_range_of_year: 'Usuário com proposta liberada em 360 dias'
-        renegotion: 'Reprovado por ter renegociação.'
-        # pioneira
-        zip_code_range: 'CEP fora da região atendida'
-        borrower_age: 'Idade não atende as exigências'
-        bureau_error: 'Erro na consulta do bureau'
-        insufficient_score: 'Score insuficiente'
-        retrictions: 'Restrições presentes'
-        insufficient_income: 'Renda insuficiente'
-        insufficient_income_after_value: 'Renda realocada insuficiente'
-        old_vehicle: 'Idade veicular não atende as exigências'
-        proposal_released_range: 'Usuário com proposta liberada em 180 dias'
-        scr_restrictions: 'Reprovado por restrições no SCR'
-        serasa_scr_restrictions: 'Reprovado por somatório do SERASA E SCR superior ao valor permitido'
-
-
-
     home:
       title: Página Inicial
     login:
@@ -177,30 +75,18 @@ pt-BR:
         unit: 'Unidade'
         created_at: 'Criado em'
   controllers:
-    consigneds:
-      one: Consignado
-      other: Consignados
-    personal_credits:
-      one: Financiamento
-      other: Financiamentos
-    agro_financing_pfs:
-      one: Crédito Agro
-      other: Crédito Agro
-    vehicle_financing_pfs:
-      one: Financiamento de veículo
-      other: Financiamento de veículos
-    personal_loans:
-      one: Empréstimo Pessoal
-      other: Empréstimo Pessoal
-    construction_financing_pfs:
-      one: Crédito para Construção e Reforma
-      other: Créditos para Construções e Reformas
-    proposals:
-      one: Propostas
-      other: Propostas
-    borrowers:
-      one: Tomador
-      other: Tomadores
+    home:
+      one: Dashboard
+      other: Dashboards
+    cards:
+      one: "Cartão"
+      other: "Cartões"
+    categories:
+      one: "Categoria"
+      other: "Categorias"
+    statements:
+      one: "Despesa"
+      other: "Despesas"
     versions:
         one: Auditoria
         other: Auditorias
