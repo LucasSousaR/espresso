@@ -406,13 +406,10 @@ module ApplicationHelper
         safe_concat(content_tag(:div, class: 'col-md-auto pr-0') do
           object.input item.to_sym, as: :file, accept:'image/*' ,capture:'user',input_html: { class: 'filestyle', data: { classbutton: 'btn btn-secondary', classinput: 'form-control inline', text: 'Selecionar', icon: '<span class="fa fa-upload mr-2"/>' }, direct_upload: false }, label: false, required: options[:required]
         end)
-
         safe_concat(object.hidden_field "#{item.to_sym}_base64")
-        safe_concat(button_tag('Capturar',type:'button', class: 'btn btn-secondary btn-sm co', data: {target:"#change_status", toggle:"modal", icon: '<span class="fa fa-camera mr-1"/>'}))
+        image_src = object.object['documents_data'].present? ?  object.object['documents_data'][item] : nil
 
-        image_src = object.object['documents_data'][item]
-
-        safe_concat(image_tag(image_src, style: 'margin-top: 50px;margin-left: 100px;max-height: 300px; margin-right: 300px;')) if image_src != 'nil' && image_src.present?
+        safe_concat(image_tag(image_src, style: 'margin-top: 50px;margin-left: 100px;max-height: 300px; margin-right: 300px;')) if object.object['documents_data'] != nil && image_src.present?
       end
     end
   end

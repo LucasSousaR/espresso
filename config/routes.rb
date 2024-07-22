@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   devise_scope  :user do
-    get "/users/confirmations" => "users/confirmations#new"
+    get '/users/confirmations' => 'users/confirmations#new'
   end
 
   root to: 'home#index'
@@ -16,6 +16,13 @@ Rails.application.routes.draw do
   resources :cards
   resources :categories
   resources :statements
+  resources :contabil_pattern_params
+  resources :contabil_patterns
+
+
+  get 'contabil_pattern_param/configure', to: 'contabil_pattern_params#configure'
+  get 'tree_label/:key', to: 'contabil_pattern_params#tree_label'
+
 
 
   resources :users do

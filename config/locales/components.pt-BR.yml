@@ -87,6 +87,12 @@ pt-BR:
     statements:
       one: "Despesa"
       other: "Despesas"
+    contabil_patterns:
+      one: "Padrão de Conta"
+      other: "Padrão de Contas"
+    contabil_pattern_params:
+      one: "Parametrização"
+      other: "Parametrizações"
     versions:
         one: Auditoria
         other: Auditorias

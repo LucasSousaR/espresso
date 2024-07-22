@@ -23,8 +23,6 @@
   <hr class="sidebar-divider">
 
   <% if can?(:manage, User) %>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
     <%= nav_context :users, 'Usuários', icon: 'wrench' do %>
    <h6 class="collapse-header">Custom Utilities:</h6>
     <%= active_link_to 'Gerenciar Usuarios', users_path, class: 'collapse-item' %>
@@ -32,16 +30,13 @@
     <% end %>
   <%end %>
 
-
-
   <% if can?(:manage, Company) %>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
     <%= nav_context :companies, 'Empresas', icon: 'wrench' do %>
       <h6 class="collapse-header">Custom Utilities:</h6>
       <%= active_link_to 'Gerenciar Empresas', companies_path, class: 'collapse-item' %>
     <% end %>
   <%end %>
+
   <% if can?(:manage, Card) %>
     <!-- Nav Item - Utilities Collapse Menu -->
     <%= nav_context :cards, 'Cartões', icon: 'wrench' do %>
@@ -50,11 +45,12 @@
     <% end %>
   <%end %>
 
-  <% if can?(:manage, Category) %>
+  <% if can?(:manage, ContabilPattern) %>
     <!-- Nav Item - Utilities Collapse Menu -->
-    <%= nav_context :categories, 'Categorias', icon: 'wrench' do %>
+    <%= nav_context :contabil_patterns, 'Padrão Contabil', icon: 'wrench' do %>
       <h6 class="collapse-header">Custom Utilities:</h6>
-      <%= active_link_to 'Gerenciar Categorias', categories_path, class: 'collapse-item' %>
+      <%= active_link_to 'Padrão Contabil', contabil_patterns_path, class: 'collapse-item' %>
+
     <% end %>
   <%end %>
 
@@ -63,67 +59,8 @@
     <%= nav_context :statements, 'Despesas', icon: 'wrench' do %>
       <h6 class="collapse-header">Custom Utilities:</h6>
       <%= active_link_to 'Gerenciar Despesas', statements_path, class: 'collapse-item' %>
-      <%= active_link_to 'Gerenciar Despesas', statements_path, class: 'collapse-item' %>
     <% end %>
   <%end %>
-
-  <!-- Heading -->
-  <!--<div class="sidebar-heading">
-    Interface
-  </div> -->
-
-  <!-- Nav Item - Pages Collapse Menu -->
-  <%# active_context = active_link?(includes: ['buttons', 'cards']) %>
-
-  <%#= nav_context :components, 'Components', icon: 'cog', active_link: active_context do %>
-    <!--<h6 class="collapse-header">Custom Components:</h6>-->
-    <%#= active_link_to 'Buttons', buttons_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to 'Cards', cards_examples_path, class: 'collapse-item' %>
-  <%# end %>
-
-  <!-- Nav Item - Utilities Collapse Menu -->
-  <%#= nav_context :utilities, 'Utilities', icon: 'wrench' do %>
-    <!--<h6 class="collapse-header">Custom Utilities:</h6> -->
-    <%#= active_link_to 'Colors', utilities_color_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to 'Borders', utilities_border_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to 'Animations', utilities_animation_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to 'Other', utilities_other_examples_path, class: 'collapse-item' %>
-  <%# end %>
-
-  <!-- Divider -->
-  <!--<hr class="sidebar-divider">-->
-
-  <!-- Heading -->
-  <!--<div class="sidebar-heading">
-    Addons
-  </div>-->
-
-  <!-- Nav Item - Pages Collapse Menu -->
-  <%#= nav_context :pages, 'Pages', icon: 'folder' do %>
-    <!--<h6 class="collapse-header">Login Screens:</h6>-->
-    <%#= active_link_to "Login", login_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to "Register", register_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to "Forgot Password", forgot_password_examples_path, class: 'collapse-item' %>
-    <!--<div class="collapse-divider"></div>
-    <h6 class="collapse-header">Other Pages:</h6>-->
-    <%#= active_link_to "404 Page", page_404_examples_path, class: 'collapse-item' %>
-    <%#= active_link_to "Blank Page", blank_examples_path, class: 'collapse-item' %>
-  <%# end %>
-
-  <!-- Nav Item - Charts -->
- <!-- <li class="nav-item <%#= add_active_class(charts_examples_path) %>">
-    <a class="nav-link" href="<%#= charts_examples_path %>">
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span>
-    </a>
-  </li>-->
-
-  <!-- Nav Item - Tables -->
-  <!--<li class="nav-item <%#= add_active_class(tables_examples_path) %>">
-    <a class="nav-link" href="<%#= tables_examples_path %>">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Tables</span></a>
-  </li>-->
 
   <!-- Divider -->
  <hr class="sidebar-divider d-none d-md-block">

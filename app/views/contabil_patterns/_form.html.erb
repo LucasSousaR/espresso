@@ -1,0 +1,9 @@
+
+<%= partial_simple_form_for(@item)do |f| %>
+  <%= f.input :label, required: true %>
+
+  <%= f.association :company, collection: Company.accessible_by(current_ability).all, prompt: true %>
+
+<% end %>
+
+

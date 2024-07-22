@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_21_001652) do
+ActiveRecord::Schema.define(version: 2024_07_22_125021) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2024_07_21_001652) do
     t.string "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "contabil_pattern_id"
+    t.index ["contabil_pattern_id"], name: "index_companies_on_contabil_pattern_id"
   end
 
   create_table "company_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -81,6 +83,31 @@ ActiveRecord::Schema.define(version: 2024_07_21_001652) do
     t.index ["user_id"], name: "index_company_users_on_user_id"
   end
 
+  create_table "contabil_pattern_params", id: :string, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "contabil_pattern_id"
+    t.string "label"
+    t.string "parent_id"
+    t.string "position"
+    t.string "key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "tree_label_fixed"
+    t.string "childreen_label_fixed"
+    t.boolean "fixed", default: false
+    t.string "head"
+    t.string "operation"
+    t.index ["contabil_pattern_id"], name: "index_contabil_pattern_params_on_contabil_pattern_id"
+    t.index ["position"], name: "index_contabil_pattern_params_on_position"
+  end
+
+  create_table "contabil_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "company_id"
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_contabil_patterns_on_company_id"
+  end
+
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "code"
@@ -94,9 +121,10 @@ ActiveRecord::Schema.define(version: 2024_07_21_001652) do
     t.string "merchant"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
     t.integer "transaction_id"
-    t.index ["category_id"], name: "index_statements_on_category_id"
+    t.string "title"
+    t.text "invoice_base64"
+    t.json "documents_data"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -150,10 +178,12 @@ ActiveRecord::Schema.define(version: 2024_07_21_001652) do
   add_foreign_key "attachments", "statements", column: "statementies_id"
   add_foreign_key "cards", "users"
   add_foreign_key "categories", "companies"
+  add_foreign_key "companies", "contabil_patterns"
   add_foreign_key "company_cards", "cards"
   add_foreign_key "company_cards", "companies"
   add_foreign_key "company_users", "companies"
   add_foreign_key "company_users", "users"
-  add_foreign_key "statements", "categories"
+  add_foreign_key "contabil_pattern_params", "contabil_patterns"
+  add_foreign_key "contabil_patterns", "companies"
   add_foreign_key "users", "roles"
 end

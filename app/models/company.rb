@@ -5,6 +5,7 @@ class Company < ApplicationRecord
   validates :cnpj, presence: true
 
   has_many :categories
+  has_many :contabil_patterns
 
 
   has_many :company_cards, dependent: :destroy

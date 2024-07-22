@@ -1,24 +1,54 @@
 <%= breadcrumb true %>
 
+
+
 <%= index_search_form_for @q do |f| %>
-  <%= f.input :id_cont, required: false, as: :string %>
+  <div class="input-group">
+    <div class="col-xl-6">
+      <%= f.input :id_cont, required: false, as: :string %>
+    </div>
+    <div class="col-xl-6">
+      <div class="input-daterange">
+        <%= f.input :performed_at_lteq, required: false, as: :string, input_html: { value: f.object.performed_at_lteq.nil? ? l(Date.today) : l(f.object.performed_at_lteq, format: :date_only) } %>
+      </div>
+
+    </div>
+  </div>
+
 <% end %>
 <br>
 <%= index_table_for(@items) do |t|
     t.column :id
-    t.column :transaction_id, 'TransactionId' do |i|
+    t.column :transaction_id, 'ID da transação' do |i|
       i.transaction_id
     end
-    t.column :cost, 'Cost' do |i|
+    t.column :cost, 'Custo' do |i|
       i.cost
     end
-    t.column :merchant, 'Merchant' do |i|
+    t.column :merchant, 'Comerciante' do |i|
       i.merchant
     end
-    t.column :performed_at, 'performed_at' do |i|
+    t.column :performed_at, 'Data Realizado' do |i|
       l(i.performed_at, format: :normal)
     end
 
 
   end
 %>
+<script>
+    $(function () {
+        // CNPJ
+        $('.input-daterange input').each(function() {
+            $(this).datepicker({
+                clearDates: true,
+                zIndexOffset: 9999,
+                format: 'dd/mm/yyyy',
+                language: 'pt-BR'
+            }).trigger('update');
+        });
+
+        $('.mask-date').inputmask({
+            alias: 'datetime', inputFormat: "dd/mm/yyyy"
+        });
+    })
+</script>

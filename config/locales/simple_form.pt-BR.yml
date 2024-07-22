@@ -33,6 +33,7 @@ pt-BR:
     labels:
       q:
         id_cont: 'Pesquisa por ID'
+        performed_at_lteq: 'Data Realizado'
         item_id: 'Pesquisa por ID'
         name_or_email_cont: 'Pesquisa avançada'
         role_id_eq: 'Função'
@@ -162,7 +163,6 @@ pt-BR:
     description: 'Descrição'
     tenant_name: 'Tenant'
     role: 'Função'
-    easycredito_instabilit: 'Instabilidade'
     company: Empresa
     uf: 'Estado'
     city: 'Cidade'
@@ -430,11 +430,11 @@ pt-BR:
     front_of_vehicle: 'Frente do veículo'
     vehicle_side: 'Lateral do veículo'
     rear_of_vehicle: 'Traseira do veículo'
-
+    invoice: 'Nota Fiscal'
     # TO ADD DOCUMENTS
     contract_ballot_credit: 'Cédula de Crédito'
     efective_cost: 'Custo Efetivo Total assinado'
-    proof_of_income_pioneira: 'Comprovante de renda (data de emissão de até 60 dias)'
+
     document_lender_insurance: 'Termo de Adesão ao Seguro Prestamista assinado'
     identification_document: 'Documento de identificação'
 

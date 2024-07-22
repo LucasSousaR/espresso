@@ -1,17 +1,29 @@
 <%= partial_simple_form_for(@item)do |f| %>
 
-  <%= f.input :transaction_id, required: true %>
-  <%= f.input :cost, required: true %>
-  <%= f.input :merchant, required: true %>
-  <%= f.input :performed_at,  input_html: { class: 'mask-date' },required: true %>
+  <%= f.input :title, required: true %>
+  <%#= f.input :transaction_id, required: true %>
+  <%= f.input :cost,  as: :integer, required: true %>
+  <%#= f.input :merchant, required: true %>
+  <div class="input-daterange">
+    <%= f.input :performed_at,  as: :string, input_html: {  value: f.object.performed_at.nil? ? l(Date.today) : l(f.object.performed_at, format: :date_only) },required: true %>
+  </div>
 
-  <%= f.association :category, collection: Category.accessible_by(current_ability).all, prompt: true %>
+  <%= item_document(f, 'invoice', label: 'Nota Fiscal', required: true) %>
 
 <% end %>
 
 <script>
     $(function () {
         // CNPJ
+        $('.input-daterange input').each(function() {
+            $(this).datepicker({
+                clearDates: true,
+                zIndexOffset: 9999,
+                format: 'dd/mm/yyyy',
+                language: 'pt-BR'
+            }).trigger('update');
+        });
+
         $('.mask-date').inputmask({
             alias: 'datetime', inputFormat: "dd/mm/yyyy"
         });

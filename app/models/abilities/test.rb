@@ -14,6 +14,7 @@ module Abilities
           can :manage, Category
           can :manage, Statement
           can :manage, Attachment
+          can :manage, ContabilPattern
 
           #can :manage, User, role: { code: ['operational'] }, company_users: { company_id: user.company_ids }
           can :index, Role, code: ['operational']
