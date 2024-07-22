@@ -17,8 +17,11 @@
 
 <% end %>
 <br>
-<%= index_table_for(@items) do |t|
+<%= index_table_for(@items,actions: ['show', 'edit']) do |t|
     t.column :id
+    t.column :title, 'Titulo' do |i|
+      i.title
+    end
     t.column :transaction_id, 'ID da transação' do |i|
       i.transaction_id
     end

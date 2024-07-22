@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_22_125021) do
+ActiveRecord::Schema.define(version: 2024_07_22_195559) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -125,6 +125,9 @@ ActiveRecord::Schema.define(version: 2024_07_22_125021) do
     t.string "title"
     t.text "invoice_base64"
     t.json "documents_data"
+    t.text "file_base64"
+    t.string "file_url"
+    t.string "file_format"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
