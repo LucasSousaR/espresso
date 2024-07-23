@@ -38,8 +38,8 @@ module Abilities
           can :index, Card, user_id: user.id
           can :index, Category, company_id: user.company_ids
 
-          can :manage, Statement
-          can :manage, Attachment
+          can :manage, Statement, user_id: user.id
+          can :manage, Attachment, statement_id: user.statement_ids
 
           cannot :index, Company, id: user.company_ids
           cannot :manage, [Company,  User, Role, ]

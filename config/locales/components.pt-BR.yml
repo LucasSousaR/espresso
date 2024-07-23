@@ -4,6 +4,8 @@ pt-BR:
       fuel:
         G: 'Gasolina'
         D: 'Diesel'
+    statements:
+      parameterization_from_to: "De/para"
     vehicle_financing_pfs:
       title: 'Nova Simulação'
       vehicle_selection:

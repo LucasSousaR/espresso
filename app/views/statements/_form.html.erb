@@ -1,21 +1,34 @@
 <%= partial_simple_form_for(@item)do |f| %>
-
-  <%= f.input :title, required: true %>
-  <%#= f.input :transaction_id, required: true %>
-  <%= f.input :cost,  as: :integer, required: true %>
-  <%#= f.input :merchant, required: true %>
-  <div class="input-daterange">
-    <%= f.input :performed_at,  as: :string, input_html: {  value: f.object.performed_at.nil? ? l(Date.today) : l(f.object.performed_at, format: :date_only) },required: true %>
+  <div class="input-group">
+    <div class="col-xl-6">
+      <%= f.input :title, required: true %>
+    </div>
+    <div class="col-xl-6">
+      <%= f.input :cost,  as: :integer, required: true %>
+    </div>
+    <div class="col-xl-6">
+      <div class="input-daterange">
+        <%= f.input :performed_at,  as: :string, input_html: {  value: f.object.performed_at.nil? ? l(Date.today) : l(f.object.performed_at, format: :date_only) },required: true %>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <%= item_document(f, 'invoice', label: 'Nota Fiscal', required: true) %>
+    </div>
   </div>
 
-  <%= item_document(f, 'invoice', label: 'Nota Fiscal', required: true) %>
+  <%#= f.input :transaction_id, required: true %>
+
+  <%#= f.input :merchant, required: true %>
+
+
+
 
 <% end %>
 
 <script>
     $(function () {
         // CNPJ
-        $('.input-daterange input').each(function() {
+        $('.input-daterange').each(function() {
             $(this).datepicker({
                 clearDates: true,
                 zIndexOffset: 9999,

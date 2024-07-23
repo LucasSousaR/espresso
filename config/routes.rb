@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :companies
   resources :cards
   resources :categories
-  resources :statements
+  resources :statements do
+    get "parameterization_from_to", on: :collection
+  end
   resources :contabil_pattern_params
   resources :contabil_patterns
 

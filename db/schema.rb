@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_22_195559) do
+ActiveRecord::Schema.define(version: 2024_07_22_211806) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -128,6 +128,10 @@ ActiveRecord::Schema.define(version: 2024_07_22_195559) do
     t.text "file_base64"
     t.string "file_url"
     t.string "file_format"
+    t.bigint "user_id"
+    t.bigint "card_id"
+    t.index ["card_id"], name: "index_statements_on_card_id"
+    t.index ["user_id"], name: "index_statements_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -188,5 +192,7 @@ ActiveRecord::Schema.define(version: 2024_07_22_195559) do
   add_foreign_key "company_users", "users"
   add_foreign_key "contabil_pattern_params", "contabil_patterns"
   add_foreign_key "contabil_patterns", "companies"
+  add_foreign_key "statements", "cards"
+  add_foreign_key "statements", "users"
   add_foreign_key "users", "roles"
 end

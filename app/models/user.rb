@@ -9,6 +9,7 @@ class User < ApplicationRecord
   belongs_to :role
 
   has_many :cards
+  has_many :statements
 
   has_many :company_users, dependent: :destroy
   has_many :companies, through: :company_users

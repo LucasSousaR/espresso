@@ -22,18 +22,19 @@
   <!-- Divider -->
   <hr class="sidebar-divider">
 
-  <% if can?(:manage, User) %>
-    <%= nav_context :users, 'Usuários', icon: 'wrench' do %>
-   <h6 class="collapse-header">Custom Utilities:</h6>
-    <%= active_link_to 'Gerenciar Usuarios', users_path, class: 'collapse-item' %>
-    <%= active_link_to 'Funções', roles_path, class: 'collapse-item' %>
-    <% end %>
-  <%end %>
 
   <% if can?(:manage, Company) %>
     <%= nav_context :companies, 'Empresas', icon: 'wrench' do %>
       <h6 class="collapse-header">Custom Utilities:</h6>
       <%= active_link_to 'Gerenciar Empresas', companies_path, class: 'collapse-item' %>
+    <% end %>
+  <%end %>
+
+  <% if can?(:manage, User) %>
+    <%= nav_context :users, 'Usuários', icon: 'wrench' do %>
+      <h6 class="collapse-header">Custom Utilities:</h6>
+      <%= active_link_to 'Gerenciar Usuarios', users_path, class: 'collapse-item' %>
+      <%= active_link_to 'Funções', roles_path, class: 'collapse-item' %>
     <% end %>
   <%end %>
 
@@ -59,7 +60,7 @@
     <%= nav_context :statements, 'Despesas', icon: 'wrench' do %>
       <h6 class="collapse-header">Custom Utilities:</h6>
       <%= active_link_to 'Gerenciar Despesas', statements_path, class: 'collapse-item' %>
-      <%= active_link_to 'De/Para', statements_path, class: 'collapse-item' %>
+      <%= active_link_to 'De/Para', parameterization_from_to_statements_path, class: 'collapse-item' %>
     <% end %>
   <%end %>
 
