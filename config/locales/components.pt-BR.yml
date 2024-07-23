@@ -4,8 +4,8 @@ pt-BR:
       fuel:
         G: 'Gasolina'
         D: 'Diesel'
-    statements:
-      parameterization_from_to: "De/para"
+
+    parameterization_from_to: "De/para"
     vehicle_financing_pfs:
       title: 'Nova Simulação'
       vehicle_selection:
@@ -89,6 +89,8 @@ pt-BR:
     statements:
       one: "Despesa"
       other: "Despesas"
+      child:
+        parameterization_from_to: "De/para"
     contabil_patterns:
       one: "Padrão de Conta"
       other: "Padrão de Contas"

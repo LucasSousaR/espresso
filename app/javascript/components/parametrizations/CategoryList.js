@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import StatementList from './StatementList';
 import Fuse from "fuse.js";
 import {
     SearchField,
@@ -19,71 +20,12 @@ import { BlueButton } from "../../styled_components/default.js";
 import LUrl from "../../../assets/images/L.png";
 const renderParams = (categories, tabActive, paramsQuery, filteredRow, paramSelected, onCategoryClick, setupSelectedParam) => {
     let data = [];
-    debugger
-    if (!tabActive) {
-        data = categories.filter(row => row.attributes.label.toUpperCase() === tabActive.toUpperCase());
-    } else {
-        data = categories;
-    }
 
-    data = categories;
 
-    let filtered = data;
-    if (paramsQuery.length > 0) {
-        const options = {
-            shouldSort: true,
-            threshold: 0.8,
-            distance: 1000,
-            maxPatternLength: 1500,
-            minMatchCharLength: 3,
-            keys: ["attributes.childreen_label", "attributes.tree_label"]
-        };
-
-        const fuse = new Fuse(data, options); // "list" is the item array
-        filtered = fuse.search(paramsQuery).map(result => result.item);
-    }
-
-    return filtered.map(ctp => {
-        let row = ctp.attributes;
-        return (
-            <div className={`${row === filteredRow ? "filteredRow" : ""}`} key={row.key}>
-                <ParamTitle level={0} head={row.head} className={'comment-wrapper'}>
-
-                    <div style={{ textAlign: "left" }}>
-                        {!row.head && <LImage src={LUrl} alt="Icon" />}
-
-                            <i
-                                style={{ fontSize: 14, cursor: 'pointer' }}
-                                className={`fa ${row === filteredRow ? "fa-eye-slash" : "fa-eye"}`}
-                            ></i>
-
-                        {!row.head  && (
-                            <span className="radio">
-                                <label htmlFor="company_category_group_type">
-                                    <input
-                                        onChange={e => setupSelectedParam(e)}
-                                        className="radio_buttons optional"
-                                        type="radio"
-                                        checked={row.key === paramSelected}
-                                        value={row.key}
-                                        name="pattern_param"
-                                    />
-                                </label>
-                            </span>
-                        )}
-                        {row.label}
-                    </div>
-                </ParamTitle>
-                <div id={"#childreen"}>
-                    {renderParams(row.childreen, tabActive, paramsQuery, filteredRow, paramSelected, onCategoryClick, setupSelectedParam)}
-                </div>
-            </div>
-        );
-    });
 };
 
 
-const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick }) => {
+const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick, heard }) => {
     const [selectedVisibility, setSelectedVisibility] = useState(false);
     const [sheetSelected, setSheetSelected] = useState([]);
     const [rootChangeEnabled, setRootChangeEnabled] = useState(false);
@@ -112,7 +54,7 @@ const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick })
         <div>
             <div style={{ display: "flex" }}>
                 <div style={{ flex: 4.1 }}>
-                    <BlockTitle>
+                    {/*<BlockTitle>
                         <div style={{ display: "flex" }}>
                             <GreyButton onClick={toggleSelectedVisibility}>
                                 <i
@@ -139,17 +81,17 @@ const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick })
                                 />
                             </CircleButton>
                         </div>
-                    </BlockTitle>
+                    </BlockTitle>*/}
                     <div
                         style={{
                             height: "60vh",
                             overflowY: "scroll",
-                            marginTop: 12,
+                            marginTop: 84,
                             borderRadius: 5,
                             border: "solid 1px #c4c4c4"
                         }}
                     >
-                        <AccountList accounts={accounts} onAccountClick={onAccountClick} />
+                        <StatementList heard={heard} statements={accounts} onAccountClick={onAccountClick} />
                     </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", margin: "0 16px" }}>
@@ -160,13 +102,13 @@ const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick })
                 <div style={{ flex: 2.3 }}>
                     <div style={{ display: 'flex', justifyContent: "space-between" }}>
                         <BlockTitle>CATEGORIAS</BlockTitle>
-                        <GreyButton>
+                        {/* <GreyButton>
                             <i
                                 className={"fa fa-plus"}
                                 style={{ marginRight: 10 }}
                             />
                             Adicionar nova conta
-                        </GreyButton>
+                        </GreyButton>*/}
                     </div>
                     <Tabs>
                         <Tab

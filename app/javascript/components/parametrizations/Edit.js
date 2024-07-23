@@ -66,32 +66,13 @@ export default class Edit extends React.Component {
     };
 
     render() {
-        const { accounts, categories, selectedAccounts, selectedCategory } = this.state;
+        const { accounts, categories } = this.state;
+        const { heard } = this.props;
 
         return (
-            <div className=" col-lg-12 d-flex justify-content-space-betwee " >
-                <div className="col-lg-6">
-                    <div className="card-default card">
-                        <div className="card-body">
-                            <StatementList statements={accounts} onAccountClick={this.handleAccountClick}/>
 
-                        </div>
+            <CategoryList categories={categories} accounts={accounts} heard={heard}  onAccountClick={this.handleAccountClick} onCategoryClick={this.handleCategoryClick}/>
 
-                    </div>
-                </div>
-                <div className="col-lg-6">
-                    <div className="card-default card">
-                        <div className="card-body">
-
-                            <CategoryList categories={categories} onCategoryClick={this.handleCategoryClick}/>
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-            </div>
         );
     }
 }
