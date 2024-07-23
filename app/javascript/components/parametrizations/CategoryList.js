@@ -82,6 +82,7 @@ const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick, h
                             </CircleButton>
                         </div>
                     </BlockTitle>*/}
+
                     <div
                         style={{
                             height: "60vh",
@@ -99,17 +100,17 @@ const CategoryList = ({ categories, accounts, onCategoryClick, onAccountClick, h
                         Aplicar
                     </ApplyButton>
                 </div>
-                <div style={{ flex: 2.3 }}>
-                    <div style={{ display: 'flex', justifyContent: "space-between" }}>
+                <div style={{ flex: 2.3,marginTop: 57}}>
+                    {/*  <div style={{ display: 'flex', justifyContent: "space-between" }}>
                         <BlockTitle>CATEGORIAS</BlockTitle>
-                        {/* <GreyButton>
+                        <GreyButton>
                             <i
                                 className={"fa fa-plus"}
                                 style={{ marginRight: 10 }}
                             />
                             Adicionar nova conta
-                        </GreyButton>*/}
-                    </div>
+                        </GreyButton>
+                    </div>*/}
                     <Tabs>
                         <Tab
                             active={tabActive === "Operacional"}
